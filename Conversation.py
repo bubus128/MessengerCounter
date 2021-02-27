@@ -1,5 +1,6 @@
 class Conversation:
     users=[]
+    file
 
     def addUser(self,user):
         self.users.append(user)
