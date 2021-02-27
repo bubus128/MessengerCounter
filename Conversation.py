@@ -1,6 +1,9 @@
 class Conversation:
-    users=[]
-    file
+    users=[]    #array of users
+
+    def __init__(self, source):     #init
+        self.source=source
+        self.file=open(source,"r")  #open to read
 
     def addUser(self,user):
         self.users.append(user)
