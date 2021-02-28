@@ -20,8 +20,11 @@ class UsersRepo:
 
     def messageFound(self,name,content):
         user=self.findUserByName(name)
-        chars=len(content)
-        user.addMessage(chars)
+        if user!=-1:
+            chars=len(content)
+            user.addMessage(chars)
+        else:
+            self.messageSender.userNotFound(name)
 
     def summary(self):
         messages=self.totalMessaes()

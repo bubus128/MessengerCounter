@@ -216,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614529935755</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="summary added">
+      <created>1614537642517</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1614537642517</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,6 +268,7 @@
     <MESSAGE value="reading messages" />
     <MESSAGE value="adding messages to users" />
     <MESSAGE value="speed up messages reading" />
-    <option name="LAST_COMMIT_MESSAGE" value="speed up messages reading" />
+    <MESSAGE value="summary added" />
+    <option name="LAST_COMMIT_MESSAGE" value="summary added" />
   </component>
 </project>

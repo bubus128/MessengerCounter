@@ -57,6 +57,8 @@ class Conversation:
             #find content of message
             crop2=message.find(self.messageSeparators[2])
             content=message[:crop2]
-            #self.messageSender.messageFound(author,content)
+            self.users.messageFound(author,content)
             cropPoint = message.find(self.messageSeparators[0])
+
+
 
