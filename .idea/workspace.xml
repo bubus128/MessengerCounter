@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ace1de-1c62-4433-b046-adcbbc56dce7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MessageSender.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Conversation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessageSender.py" beforeDir="false" afterPath="$PROJECT_DIR$/MessageSender.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614518504041</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="extracting users 2">
+      <created>1614519284815</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614519284815</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,6 +227,7 @@
     <MESSAGE value="reading whole conversation" />
     <MESSAGE value="title extracting" />
     <MESSAGE value="extracting users" />
-    <option name="LAST_COMMIT_MESSAGE" value="extracting users" />
+    <MESSAGE value="extracting users 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="extracting users 2" />
   </component>
 </project>
