@@ -1,3 +1,7 @@
+from MessageSender import MessageSender
+from User import User
+
+
 class Conversation:
     users=[]    #array of users
     titleCrop=["<title>","</title>"]
@@ -5,6 +9,7 @@ class Conversation:
 
     def __init__(self, source):     #init
         self.source=source
+        self.messageSender = MessageSender()
         self.readConv()
         self.readUsers()
 
@@ -28,10 +33,12 @@ class Conversation:
         #extracting particular users
         usersCroped=users.replace(' i ',', ').replace(' and ',',v').split(', ')
         for user in usersCroped:
-            print(user)
+            self.addUser(user)
 
-    def addUser(self,user):
+    def addUser(self,name):
+        user=User(name)
         self.users.append(user)
+        self.messageSender.userCreated(name)
 
     def countMessaes(self):
         total=0
