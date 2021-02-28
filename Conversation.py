@@ -48,10 +48,9 @@ class Conversation:
         message=self.content
         cropPoint=message.find(self.messageSeparators[0])
         while(cropPoint>-1):
-            message=message[cropPoint+len(self.messageSeparators[0]):]
             #find author of message
             crop1=message.find(self.messageSeparators[1])
-            author=message[:crop1]
+            author=message[cropPoint+len(self.messageSeparators[0]):crop1]
             message=message[crop1+len(self.messageSeparators[1]):]
             #find content of message
             crop2=message.find(self.messageSeparators[2])
