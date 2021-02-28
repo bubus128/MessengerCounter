@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ace1de-1c62-4433-b046-adcbbc56dce7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Conversation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MessageSender.py" beforeDir="false" afterPath="$PROJECT_DIR$/MessageSender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UsersRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/UsersRepo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614537642517</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="summary fixed">
+      <created>1614545630715</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1614545630715</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,6 +273,7 @@
     <MESSAGE value="adding messages to users" />
     <MESSAGE value="speed up messages reading" />
     <MESSAGE value="summary added" />
-    <option name="LAST_COMMIT_MESSAGE" value="summary added" />
+    <MESSAGE value="summary fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="summary fixed" />
   </component>
 </project>

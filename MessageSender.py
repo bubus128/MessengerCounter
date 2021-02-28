@@ -20,4 +20,4 @@ class MessageSender:
 
     def printUser(self,totalMessages,totalChars,user):
         message="user {} wrote: {} messages(containing {} chars), it's {}% of all messages({}% of all chars) in this conversation"
-        print(message.format(user.name,user.messages,user.chars,user.messages/totalMessages,user.chars/totalChars))
+        print(message.format(user.name,user.messages,user.chars,user.messages/totalMessages*100,user.chars/totalChars*100))
