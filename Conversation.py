@@ -6,7 +6,7 @@ class Conversation:
         self.readUsers()
 
     def readUsers(self):
-        file = open(self.source, "r")   #open read only
+        file = open(self.source, "r",encoding='utf-8')   #open read only
         for line in file:
             print(line)
         file.close;
