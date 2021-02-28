@@ -7,8 +7,7 @@ class Conversation:
 
     def readUsers(self):
         file = open(self.source, "r",encoding='utf-8')   #open read only
-        for line in file:
-            print(line)
+        self.content=file.read()
         file.close;
 
     def addUser(self,user):
