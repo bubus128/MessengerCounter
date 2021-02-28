@@ -6,12 +6,19 @@ class Conversation:
     users=[]    #array of users
     titleCrop=["<title>","</title>"]
     usersCrop=["class=\"_2lek\">","</div>"]
+    messageSeparators=["<div class=\"_3-96 _2pio _2lek _2lel\">","</div><div class=\"_3-96 _2let\"><div><div></div><div>","</div>"]
 
     def __init__(self, source):     #init
+        #seting sourcefile of conversation
         self.source=source
+        #creating messageSender
         self.messageSender = MessageSender()
+        #red title and content of conversation
         self.readConv()
+        #create users of conversation
         self.readUsers()
+        #read messages
+        self.readMessages()
 
     def readConv(self):
         #reading conversation
@@ -35,18 +42,33 @@ class Conversation:
         for user in usersCroped:
             self.addUser(user)
 
+    def readMessages(self):
+        message=self.content
+        cropPoint=message.find(self.messageSeparators[0])
+        while(cropPoint>-1):
+            message=message[cropPoint+len(self.messageSeparators[0]):]
+            #find author of message
+            crop1=message.find(self.messageSeparators[1])
+            author=message[:crop1]
+            message=message[crop1+len(self.messageSeparators[1]):]
+            #find content of message
+            crop2=message.find(self.messageSeparators[2])
+            content=message[:crop2]
+            self.messageSender.messageFound(author,content)
+            cropPoint = message.find(self.messageSeparators[0])
+
     def addUser(self,name):
         user=User(name)
         self.users.append(user)
         self.messageSender.userCreated(name)
 
-    def countMessaes(self):
+    def totalMessaes(self):
         total=0
         for user in self.users:
             total+=user.messages
         return total
 
-    def countChars(self):
+    def totalChars(self):
         total=0
         for user in self.users:
             total+=user.chars

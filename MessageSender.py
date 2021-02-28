@@ -6,3 +6,7 @@ class MessageSender:
     def userCreated(self,name):
         message="user: {} created"
         print(message.format(name))
+
+    def messageFound(self,author,content):
+        message="{} wtire: {}"
+        print(message.format(author,content))
