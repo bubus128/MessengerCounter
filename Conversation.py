@@ -42,7 +42,7 @@ class Conversation:
         endUsers=crop1.find(self.usersCrop[1])
         users=crop1[:endUsers]
         #extracting particular users
-        usersCroped=users.replace(' i ',', ').replace(' and ',',v').split(', ')
+        usersCroped=users.replace(' i ',', ').replace(' and ',',v').replace('Uczestnicy: ','').replace('Users: ','').split(', ')
         for user in usersCroped:
             self.users.addUser(user)
 
