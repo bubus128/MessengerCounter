@@ -165,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614516007231</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="title extracting">
+      <created>1614517168745</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1614517168745</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +211,7 @@
     <MESSAGE value="reading fixed" />
     <MESSAGE value="testing" />
     <MESSAGE value="reading whole conversation" />
-    <option name="LAST_COMMIT_MESSAGE" value="reading whole conversation" />
+    <MESSAGE value="title extracting" />
+    <option name="LAST_COMMIT_MESSAGE" value="title extracting" />
   </component>
 </project>
