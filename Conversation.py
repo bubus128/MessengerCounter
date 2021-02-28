@@ -1,9 +1,9 @@
 from MessageSender import MessageSender
 from User import User
+from UsersRepo import UsersRepo
 
 
 class Conversation:
-    users=[]    #array of users
     titleCrop=["<title>","</title>"]
     usersCrop=["class=\"_2lek\">","</div>"]
     messageSeparators=["<div class=\"_3-96 _2pio _2lek _2lel\">","</div><div class=\"_3-96 _2let\"><div><div></div><div>","</div>"]
@@ -13,6 +13,8 @@ class Conversation:
         self.source=source
         #creating messageSender
         self.messageSender = MessageSender()
+        #users repo initialization
+        self.users = UsersRepo(self.messageSender)
         #red title and content of conversation
         self.readConv()
         #create users of conversation
@@ -40,7 +42,7 @@ class Conversation:
         #extracting particular users
         usersCroped=users.replace(' i ',', ').replace(' and ',',v').split(', ')
         for user in usersCroped:
-            self.addUser(user)
+            self.users.addUser(user)
 
     def readMessages(self):
         message=self.content
@@ -54,13 +56,8 @@ class Conversation:
             #find content of message
             crop2=message.find(self.messageSeparators[2])
             content=message[:crop2]
-            self.messageSender.messageFound(author,content)
+            #self.messageSender.messageFound(author,content)
             cropPoint = message.find(self.messageSeparators[0])
-
-    def addUser(self,name):
-        user=User(name)
-        self.users.append(user)
-        self.messageSender.userCreated(name)
 
     def totalMessaes(self):
         total=0

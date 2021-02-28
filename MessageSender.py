@@ -10,3 +10,6 @@ class MessageSender:
     def messageFound(self,author,content):
         message="{} wtire: {}"
         print(message.format(author,content))
+
+    def repoInit(self):
+        print("users repo is starting")
