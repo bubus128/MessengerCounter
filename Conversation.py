@@ -3,7 +3,13 @@ class Conversation:
 
     def __init__(self, source):     #init
         self.source=source
-        self.file=open(source,"r")  #open to read
+        self.readUsers()
+
+    def readUsers(self):
+        file = open(self.source, "r")   #open read only
+        for line in file:
+            print(line)
+        file.close;
 
     def addUser(self,user):
         self.users.append(user)
