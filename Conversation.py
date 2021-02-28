@@ -3,12 +3,20 @@ class Conversation:
 
     def __init__(self, source):     #init
         self.source=source
+        self.readConv()
         self.readUsers()
 
-    def readUsers(self):
-        file = open(self.source, "r",encoding='utf-8')   #open read only
-        self.content=file.read()
+    def readConv(self):
+        file = open(self.source, "r", encoding='utf-8')  # open read only
+        self.content = file.read()
         file.close;
+        titleStart=self.content.find("<title>")+7
+        titleEnd=self.content.find("</title>")
+        self.title=self.content[titleStart:titleEnd]
+        print(self.title)
+
+    def readUsers(self):
+        print(self.title)
 
     def addUser(self,user):
         self.users.append(user)
