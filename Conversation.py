@@ -21,6 +21,8 @@ class Conversation:
         self.readUsers()
         #read messages
         self.readMessages()
+        #summary
+        self.users.summary()
 
     def readConv(self):
         #reading conversation
@@ -58,14 +60,3 @@ class Conversation:
             #self.messageSender.messageFound(author,content)
             cropPoint = message.find(self.messageSeparators[0])
 
-    def totalMessaes(self):
-        total=0
-        for user in self.users:
-            total+=user.messages
-        return total
-
-    def totalChars(self):
-        total=0
-        for user in self.users:
-            total+=user.chars
-        return total
