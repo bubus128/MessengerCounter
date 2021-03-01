@@ -1,0 +1,389 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
++++ /dev/null	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
+@@ -1,4 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (MessengerCounter)" project-jdk-type="Python SDK" />
+-</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+deleted file mode 100644
+--- a/.idea/inspectionProfiles/profiles_settings.xml	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
++++ /dev/null	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
+@@ -1,6 +0,0 @@
+-<component name="InspectionProjectProfileManager">
+-  <settings>
+-    <option name="USE_PROJECT_PROFILE" value="false" />
+-    <version value="1.0" />
+-  </settings>
+-</component>
+\ No newline at end of file
+Index: .idea/MessengerCounter.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/MessengerCounter.iml b/.idea/MessengerCounter.iml
+deleted file mode 100644
+--- a/.idea/MessengerCounter.iml	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
++++ /dev/null	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/venv" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
++++ /dev/null	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/MessengerCounter.iml" filepath="$PROJECT_DIR$/.idea/MessengerCounter.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+deleted file mode 100644
+--- a/.idea/workspace.xml	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
++++ /dev/null	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
+@@ -1,289 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ChangeListManager">
+-    <list default="true" id="62ace1de-1c62-4433-b046-adcbbc56dce7" name="Default Changelist" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Conversation.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/MessageSender.py" beforeDir="false" afterPath="$PROJECT_DIR$/MessageSender.py" afterDir="false" />
+-    </list>
+-    <option name="SHOW_DIALOG" value="false" />
+-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-    <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Python Script" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="Git.Settings">
+-    <favorite-branches>
+-      <branch-storage>
+-        <map>
+-          <entry type="LOCAL">
+-            <value>
+-              <list>
+-                <branch-info repo="$PROJECT_DIR$" source="start" />
+-              </list>
+-            </value>
+-          </entry>
+-        </map>
+-      </branch-storage>
+-    </favorite-branches>
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="start" />
+-      </map>
+-    </option>
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="ProjectId" id="1p3mR956bVmfqMI0U8kKsGdTMWp" />
+-  <component name="ProjectLevelVcsManager">
+-    <ConfirmationsSetting value="2" id="Add" />
+-  </component>
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+-  <component name="PropertiesComponent">
+-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+-  </component>
+-  <component name="RunManager">
+-    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="MessengerCounter" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Python.Main" />
+-      </list>
+-    </recent_temporary>
+-  </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+-  <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="62ace1de-1c62-4433-b046-adcbbc56dce7" name="Default Changelist" comment="" />
+-      <created>1614420136954</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1614420136954</updated>
+-    </task>
+-    <task id="LOCAL-00001" summary="start project">
+-      <created>1614420543439</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614420543439</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="creating simply classes">
+-      <created>1614423876948</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614423876948</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="creating simply classes">
+-      <created>1614424771906</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614424771906</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="creating simply classes">
+-      <created>1614424833430</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614424833430</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="merge start branch">
+-      <created>1614424935447</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614424935447</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="open file">
+-      <created>1614439741992</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614439741992</updated>
+-    </task>
+-    <task id="LOCAL-00007" summary="reading file and testing content">
+-      <created>1614508337029</created>
+-      <option name="number" value="00007" />
+-      <option name="presentableId" value="LOCAL-00007" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614508337029</updated>
+-    </task>
+-    <task id="LOCAL-00008" summary="reading fixed">
+-      <created>1614509028145</created>
+-      <option name="number" value="00008" />
+-      <option name="presentableId" value="LOCAL-00008" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614509028145</updated>
+-    </task>
+-    <task id="LOCAL-00009" summary="testing">
+-      <created>1614513602356</created>
+-      <option name="number" value="00009" />
+-      <option name="presentableId" value="LOCAL-00009" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614513602356</updated>
+-    </task>
+-    <task id="LOCAL-00010" summary="testing">
+-      <created>1614514042411</created>
+-      <option name="number" value="00010" />
+-      <option name="presentableId" value="LOCAL-00010" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614514042411</updated>
+-    </task>
+-    <task id="LOCAL-00011" summary="reading whole conversation">
+-      <created>1614516007231</created>
+-      <option name="number" value="00011" />
+-      <option name="presentableId" value="LOCAL-00011" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614516007231</updated>
+-    </task>
+-    <task id="LOCAL-00012" summary="title extracting">
+-      <created>1614517168745</created>
+-      <option name="number" value="00012" />
+-      <option name="presentableId" value="LOCAL-00012" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614517168745</updated>
+-    </task>
+-    <task id="LOCAL-00013" summary="extracting users">
+-      <created>1614518504041</created>
+-      <option name="number" value="00013" />
+-      <option name="presentableId" value="LOCAL-00013" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614518504041</updated>
+-    </task>
+-    <task id="LOCAL-00014" summary="extracting users 2">
+-      <created>1614519284815</created>
+-      <option name="number" value="00014" />
+-      <option name="presentableId" value="LOCAL-00014" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614519284815</updated>
+-    </task>
+-    <task id="LOCAL-00015" summary="extracting users 2">
+-      <created>1614519654510</created>
+-      <option name="number" value="00015" />
+-      <option name="presentableId" value="LOCAL-00015" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614519654510</updated>
+-    </task>
+-    <task id="LOCAL-00016" summary="reading messages">
+-      <created>1614527830818</created>
+-      <option name="number" value="00016" />
+-      <option name="presentableId" value="LOCAL-00016" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614527830818</updated>
+-    </task>
+-    <task id="LOCAL-00017" summary="adding messages to users">
+-      <created>1614528738973</created>
+-      <option name="number" value="00017" />
+-      <option name="presentableId" value="LOCAL-00017" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614528738973</updated>
+-    </task>
+-    <task id="LOCAL-00018" summary="speed up messages reading">
+-      <created>1614529935755</created>
+-      <option name="number" value="00018" />
+-      <option name="presentableId" value="LOCAL-00018" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614529935755</updated>
+-    </task>
+-    <task id="LOCAL-00019" summary="summary added">
+-      <created>1614537642517</created>
+-      <option name="number" value="00019" />
+-      <option name="presentableId" value="LOCAL-00019" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614537642517</updated>
+-    </task>
+-    <task id="LOCAL-00020" summary="summary fixed">
+-      <created>1614545630715</created>
+-      <option name="number" value="00020" />
+-      <option name="presentableId" value="LOCAL-00020" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614545630715</updated>
+-    </task>
+-    <task id="LOCAL-00021" summary="percent displaying fix">
+-      <created>1614545840932</created>
+-      <option name="number" value="00021" />
+-      <option name="presentableId" value="LOCAL-00021" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1614545840932</updated>
+-    </task>
+-    <option name="localTasksCounter" value="22" />
+-    <servers />
+-  </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State />
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-    <option name="RECENT_FILTERS">
+-      <map>
+-        <entry key="User">
+-          <value>
+-            <list>
+-              <RecentGroup>
+-                <option name="FILTER_VALUES">
+-                  <option value="*" />
+-                </option>
+-              </RecentGroup>
+-            </list>
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-    <option name="oldMeFiltersMigrated" value="true" />
+-  </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="start project" />
+-    <MESSAGE value="creating simply classes" />
+-    <MESSAGE value="merge start branch" />
+-    <MESSAGE value="open file" />
+-    <MESSAGE value="reading file and testing content" />
+-    <MESSAGE value="reading fixed" />
+-    <MESSAGE value="testing" />
+-    <MESSAGE value="reading whole conversation" />
+-    <MESSAGE value="title extracting" />
+-    <MESSAGE value="extracting users" />
+-    <MESSAGE value="extracting users 2" />
+-    <MESSAGE value="reading messages" />
+-    <MESSAGE value="adding messages to users" />
+-    <MESSAGE value="speed up messages reading" />
+-    <MESSAGE value="summary added" />
+-    <MESSAGE value="summary fixed" />
+-    <MESSAGE value="percent displaying fix" />
+-    <option name="LAST_COMMIT_MESSAGE" value="percent displaying fix" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
++++ /dev/null	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file

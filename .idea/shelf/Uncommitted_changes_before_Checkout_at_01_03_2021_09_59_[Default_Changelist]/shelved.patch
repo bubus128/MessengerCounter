@@ -1,0 +1,41 @@
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/Plotter.py
+rename from .idea/.gitignore
+rename to Plotter.py
+--- a/.idea/.gitignore	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
++++ b/Plotter.py	(date 1614588788177)
+@@ -1,0 +1,11 @@
++import matplotlib.pyplot as plt
++
++class Plotter:
++    def __init__(self):
++        # x axis values
++        x = [1, 2, 3]
++        # corresponding y axis values
++        y = [2, 4, 1]
++
++        # plotting the points
++        plt.plot(x, y)
+\ No newline at end of file
+Index: Conversation.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from MessageSender import MessageSender\r\nfrom User import User\r\nfrom UsersRepo import UsersRepo\r\n\r\n\r\nclass Conversation:\r\n    titleCrop=[\"<title>\",\"</title>\"]\r\n    usersCrop=[\"class=\\\"_2lek\\\">\",\"</div>\"]\r\n    messageSeparators=[\"<div class=\\\"_3-96 _2pio _2lek _2lel\\\">\",\"</div><div class=\\\"_3-96 _2let\\\"><div><div></div><div>\",\"</div>\"]\r\n\r\n    def __init__(self, source):     #init\r\n        #seting sourcefile of conversation\r\n        self.source=source\r\n        #creating messageSender\r\n        self.messageSender = MessageSender()\r\n        #users repo initialization\r\n        self.users = UsersRepo(self.messageSender)\r\n        #red title and content of conversation\r\n        self.readConv()\r\n        #create users of conversation\r\n        self.readUsers()\r\n        #read messages\r\n        self.readMessages()\r\n        #summary\r\n        self.users.summary()\r\n\r\n    def readConv(self):\r\n        #reading conversation\r\n        file = open(self.source, \"r\", encoding='utf-8')  # open read only\r\n        self.content = file.read()\r\n        file.close;\r\n        #extracting title from content\r\n        titleStart=self.content.find(self.titleCrop[0])+len(self.titleCrop[0])\r\n        titleEnd=self.content.find(self.titleCrop[1])\r\n        self.title=self.content[titleStart:titleEnd]\r\n        #print(self.title)\r\n\r\n    def readUsers(self):\r\n        #extractiong users from content\r\n        startUsers=self.content.find(self.usersCrop[0])+len(self.usersCrop[0])\r\n        crop1=self.content[startUsers:]\r\n        endUsers=crop1.find(self.usersCrop[1])\r\n        users=crop1[:endUsers]\r\n        #extracting particular users\r\n        usersCroped=users.replace(' i ',', ').replace(' and ',',v').replace('Uczestnicy: ','').replace('Users: ','').split(', ')\r\n        for user in usersCroped:\r\n            self.users.addUser(user)\r\n\r\n    def readMessages(self):\r\n        message=self.content\r\n        cropPoint=message.find(self.messageSeparators[0])\r\n        while(cropPoint>-1):\r\n            #find author of message\r\n            crop1=message.find(self.messageSeparators[1])\r\n            author=message[cropPoint+len(self.messageSeparators[0]):crop1]\r\n            message=message[crop1+len(self.messageSeparators[1]):]\r\n            #find content of message\r\n            crop2=message.find(self.messageSeparators[2])\r\n            content=message[:crop2]\r\n            self.users.messageFound(author,content)\r\n            cropPoint = message.find(self.messageSeparators[0])\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Conversation.py b/Conversation.py
+--- a/Conversation.py	(revision fd84f174382517a43c0bd091098e3ab5a59306bd)
++++ b/Conversation.py	(date 1614588788181)
+@@ -23,6 +23,7 @@
+         self.readMessages()
+         #summary
+         self.users.summary()
++        plotter=Plotter()
+ 
+     def readConv(self):
+         #reading conversation
