@@ -21,6 +21,8 @@ class Conversation:
         self.readUsers()
         #read messages
         self.readMessages()
+        #sorting
+        self.users.messageSort()
         #summary
         self.users.summary()
 

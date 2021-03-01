@@ -52,3 +52,10 @@ class UsersRepo:
 
     def getChars(self):
         return [user.chars for user in self.users]
+
+    def sortingKey(self,user):
+        return user.messages
+
+    def messageSort(self):
+        self.users.sort(key=self.sortingKey,reverse=True)
+        print("sorted")

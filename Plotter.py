@@ -6,5 +6,6 @@ class Plotter:
         names=conversation.getNames()
         messages=conversation.getMessages()
         chars=conversation.getChars()
-        plt.plot(names,messages)
+        plt.pie(messages,labels=names)
+        plt.legend()
         plt.show()
