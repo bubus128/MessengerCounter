@@ -6,6 +6,5 @@ class Plotter:
         names=conversation.getNames()
         messages=conversation.getMessages()
         chars=conversation.getChars()
-        print("names")
-        print(names)
-        pass
+        plt.plot(names,messages)
+        plt.show()
