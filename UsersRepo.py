@@ -43,3 +43,12 @@ class UsersRepo:
         for user in self.users:
             total+=user.chars
         return total
+
+    def getNames(self):
+        return [user.name for user in self.users]
+
+    def getMessages(self):
+        return [user.messages for user in self.users]
+
+    def getChars(self):
+        return [user.chars for user in self.users]

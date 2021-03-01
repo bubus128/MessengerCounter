@@ -24,6 +24,15 @@ class Conversation:
         #summary
         self.users.summary()
 
+    def getNames(self):
+        return self.users.getNames()
+
+    def getMessages(self):
+        return self.users.getMessages()
+
+    def getChars(self):
+        return self.users.getChars()
+
     def readConv(self):
         #reading conversation
         file = open(self.source, "r", encoding='utf-8')  # open read only
