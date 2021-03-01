@@ -7,5 +7,5 @@ class Plotter:
         messages=conversation.getMessages()
         chars=conversation.getChars()
         plt.pie(messages,labels=names)
-        plt.legend()
+        plt.legend(loc='upper left',bbox_to_anchor=(1.3, 1))
         plt.show()
