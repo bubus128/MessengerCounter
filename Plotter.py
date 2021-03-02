@@ -11,9 +11,11 @@ class Plotter:
         chars=conversation.getChars()
         with PdfPages(self.outputLoc) as pdf:
             plt.pie(messages,labels=names, autopct='%1.2f%%')
+            plt.title("procentowy udział względem wysłanych wiadomości")
             plt.legend(loc='upper left',bbox_to_anchor=(1.3, 1),labels=['%s, %1.2f %%' % (l, s/100) for l, s in zip(names, messages)])
             pdf.savefig()
             plt.close()
             plt.pie(chars,labels=names, autopct='%1.2f%%')
+            plt.title("procentowy udział względem wysłanych znaków")
             plt.legend(loc='upper left', bbox_to_anchor=(1.3, 1),labels=['%s, %1.2f %%' % (l, s / 100) for l, s in zip(names, chars)])
             pdf.savefig()
