@@ -9,7 +9,9 @@ class UsersRepo:
     def addUser(self, name):
         user = User(name)
         self.users.append(user)
-        self.messageSender.userCreated(name)
+
+    def getUsersCount(self):
+        return len(self.users)
 
     #find user by name, if not found then return -1
     def findUserByName(self,name):
@@ -25,12 +27,6 @@ class UsersRepo:
             user.addMessage(chars)
         else:
             self.messageSender.userNotFound(name)
-
-    def summary(self):
-        messages=self.totalMessaes()
-        chars=self.totalChars()
-        for user in self.users:
-            self.messageSender.printUser(messages,chars,user)
 
     def totalMessaes(self):
         total=0

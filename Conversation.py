@@ -15,7 +15,7 @@ class Conversation:
         # creating messageSender
         self.messageSender = MessageSender()
         # users repo initialization
-        self.users = UsersRepo(self.messageSender)
+        self.usersRepo = UsersRepo(self.messageSender)
         # red title and content of conversation
         self.readConv()
         # create users of conversation
@@ -23,18 +23,16 @@ class Conversation:
         # read messages
         self.readMessages()
         # sorting
-        self.users.messageSort()
-        # summary
-        self.users.summary()
+        self.usersRepo.messageSort()
 
     def getNames(self):
-        return self.users.getNames()
+        return self.usersRepo.getNames()
 
     def getMessages(self):
-        return self.users.getMessages()
+        return self.usersRepo.getMessages()
 
     def getChars(self):
-        return self.users.getChars()
+        return self.usersRepo.getChars()
 
     def readConv(self):
         # reading conversation
@@ -58,7 +56,8 @@ class Conversation:
                                                                                                             '').split(
             ', ')
         for user in usersCroped:
-            self.users.addUser(user)
+            self.usersRepo.addUser(user)
+        self.messageSender.usersCreated(self.usersRepo.getUsersCount())
 
     def readMessages(self):
         message = self.content
@@ -71,5 +70,7 @@ class Conversation:
             # find content of message
             crop2 = message.find(self.messageSeparators[2])
             content = message[:crop2]
-            self.users.messageFound(author, content)
+            self.usersRepo.messageFound(author, content)
             cropPoint = message.find(self.messageSeparators[0])
+
+        self.messageSender.messagesReaded(self.usersRepo.totalMessaes(),self.usersRepo.totalChars())
