@@ -7,6 +7,7 @@ from tkinter.filedialog import askdirectory
 if __name__ == '__main__' :
     #file chooser
     path= askdirectory()
+    #select .html files from directory
     files=glob.glob(path+"/*.html")
     conv=Conversation(files)
     plot=Plotter(conv)
