@@ -61,10 +61,9 @@ class Conversation:
             self.users.addUser(user)
 
     def readMessages(self):
-        test=100
         message = self.content
         cropPoint = message.find(self.messageSeparators[0])
-        while (cropPoint > -1 & test>0):
+        while (cropPoint > -1):
             # find author of message
             crop1 = message.find(self.messageSeparators[1])
             author = message[cropPoint + len(self.messageSeparators[0]):crop1]
@@ -74,4 +73,3 @@ class Conversation:
             content = message[:crop2]
             self.users.messageFound(author, content)
             cropPoint = message.find(self.messageSeparators[0])
-            test-=1
