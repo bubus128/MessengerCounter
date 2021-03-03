@@ -9,19 +9,19 @@ class Conversation:
     messageSeparators = ["<div class=\"_3-96 _2pio _2lek _2lel\">",
                          "</div><div class=\"_3-96 _2let\"><div><div></div><div>", "</div>"]
 
-    def __init__(self, source):  # init
-        # seting sourcefile of conversation
-        self.source = source
+    def __init__(self, files):  # init
         # creating messageSender
         self.messageSender = MessageSender()
         # users repo initialization
         self.usersRepo = UsersRepo(self.messageSender)
-        # red title and content of conversation
-        self.readConv()
-        # create users of conversation
-        self.readUsers()
-        # read messages
-        self.readMessages()
+        # read files
+        for file in files:
+            # red title and content of conversation
+            self.readConv(file)
+            # create users of conversation
+            self.readUsers()
+            # read messages
+            self.readMessages()
         # sorting
         self.usersRepo.messageSort()
 
@@ -34,9 +34,9 @@ class Conversation:
     def getChars(self):
         return self.usersRepo.getChars()
 
-    def readConv(self):
+    def readConv(self,patch):
         # reading conversation
-        file = open(self.source, "r", encoding='utf-8')  # open read only
+        file = open(patch, "r", encoding='utf-8')  # open read only
         self.content = file.read()
         file.close()
         # extracting title from content

@@ -4,20 +4,23 @@ from matplotlib.backends.backend_pdf import PdfPages
 class Plotter:
     outputLoc=r'output\outpu.pdf'
     def __init__(self,conversation):
-        names=conversation.getNames()
-        messages=conversation.getMessages()
-        chars=conversation.getChars()
-        totalChars=conversation.usersRepo.totalChars()
-        totalMessages=conversation.usersRepo.totalMessaes()
+        self.conversation=conversation
+        self.totalChars=conversation.usersRepo.totalMessaes()
+        self.totalMessages=conversation.usersRepo.totalMessaes()
+
+
+    def plotChars(self):
         with PdfPages(self.outputLoc) as pdf:
-            self.chartCreate("procentowy udział względem wysłanych wiadomości",messages,names,totalMessages)
+            info = pdf.infodict()
+            title = "statistics of \"{}\" conversation"
+            info["Title"] = title.format(self.conversation.title)
+            self.chartCreate("percentage of messages sent",self.conversation.messages,self.conversation.names,self.totalMessages)
             pdf.savefig()
             plt.close()
 
-            self.chartCreate("procentowy udział względem wysłanych znaków", chars, names, totalChars)
+            self.chartCreate("percentage of chars in messages sent", self.conversation.chars, self.conversation.names, self.totalChars)
             pdf.savefig()
             plt.close()
-
 
     def chartCreate(self,title,values,lables,maxValue):
         plt.figure(figsize=[11.69, 8.27])

@@ -8,7 +8,9 @@ class UsersRepo:
 
     def addUser(self, name):
         user = User(name)
-        self.users.append(user)
+
+        if self.findUserByName(name)==-1:
+            self.users.append(user)
 
     def getUsersCount(self):
         return len(self.users)
