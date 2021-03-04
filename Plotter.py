@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
+from PyPDF4 import PdfFileReader, PdfFileWriter
 
 class Plotter:
     outputLoc=r'output\outpu.pdf'
@@ -21,6 +22,10 @@ class Plotter:
             self.chartCreate("percentage of chars in messages sent", self.conversation.chars, self.conversation.names, self.totalChars)
             pdf.savefig()
             plt.close()
+
+        writer = PdfFileWriter()
+        reader = PdfFileReader(self.outputLoc)
+        writer.addPage()
 
     def chartCreate(self,title,values,lables,maxValue):
         plt.figure(figsize=[11.69, 8.27])
