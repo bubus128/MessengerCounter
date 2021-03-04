@@ -68,10 +68,10 @@ class UsersRepo:
 
     #sort users by messages count
     def messageSort(self):
-        self.users.sort(key=self.sortingMessagesKey(),reverse=True)
+        self.users.sort(key=self.sortingMessagesKey,reverse=True)
         print("sorted by messages count")
 
     #sort users by chars count
     def charsSort(self):
-        self.users.sort(key=self.sortingCharsKey(), reverse=True)
+        self.users.sort(key=self.sortingCharsKey, reverse=True)
         print("sorted by chars count")
