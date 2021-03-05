@@ -19,7 +19,7 @@ class Conversation:
             #red title and content of conversation
             self.readConv(file)
             #create users of conversation
-            self.readUsers()
+            self.readUsersPriv()
             #read messages
             self.readMessages()
         #sorting
@@ -44,6 +44,10 @@ class Conversation:
         titleEnd = self.content.find(self.titleCrop[1])
         self.title = self.content[titleStart:titleEnd]
         #print(self.title)
+
+    def readUsersPriv(self):
+        self.usersRepo.addUser("Wiktoria Wawer")
+        self.usersRepo.addUser("Jakub Świsłocki")
 
     def readUsers(self):
         #extractiong users from content
