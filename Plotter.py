@@ -5,7 +5,7 @@ class Plotter:
     outputLoc=r'output\outpu.pdf'
     def __init__(self,conversation):
         self.conversation=conversation
-        self.totalChars=conversation.usersRepo.totalMessaes()
+        self.totalChars=conversation.usersRepo.totalChars()
         self.totalMessages=conversation.usersRepo.totalMessaes()
         self.plotChars()
 
