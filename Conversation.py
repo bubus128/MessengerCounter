@@ -1,6 +1,5 @@
 from MessageSender import MessageSender
 from UsersRepo import UsersRepo
-from tqdm import tqdm
 import json
 import os
 
@@ -24,6 +23,19 @@ class Conversation:
         #sorting
         self.usersRepo.messageSort()
 
+    def readFile(self,path):
+        #json file reading
+        file=json.load(open(path,encoding='utf-8',))
+        #users reading
+        print("Users reading")
+        for user in file["participants"]:
+            self.usersRepo.addUser(user["name"])
+        #messages reading
+        print("Messages reading")
+        for message in file["messages"]:
+            if "content" in message:
+                self.usersRepo.messageFound(message["sender_name"],message["content"])
+
     def getNames(self):
         return self.usersRepo.getNames()
 
@@ -32,16 +44,3 @@ class Conversation:
 
     def getChars(self):
         return self.usersRepo.getChars()
-
-    def readFile(self,path):
-        #json file reading
-        file=json.load(open(path))
-        #users reading
-        print("Users reading")
-        for user in tqdm(file["participants"]):
-            self.usersRepo.addUser(user["name"])
-        #messages reading
-        print("Messages reading")
-        for message in tqdm(file["messages"]):
-            if  "content" in message:
-                self.usersRepo.messageFound(message["sender_name"],message["content"])
