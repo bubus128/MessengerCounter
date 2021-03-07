@@ -14,7 +14,6 @@ class Plotter:
         with PdfPages(self.outputLoc) as pdf:
             info = pdf.infodict()
             title = "statistics of \"{}\" conversation"
-            info["Title"] = title.format(self.conversation.title)
             self.chartCreate("percentage of messages sent",self.conversation.getMessages(),self.conversation.getNames(),self.totalMessages)
             pdf.savefig()
             plt.close()
