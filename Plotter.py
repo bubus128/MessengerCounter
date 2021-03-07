@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 
 class Plotter:
-    outputLoc=r'output\outpu.pdf'
+    outputLoc=r'output\\'
     def __init__(self,conversation):
         self.conversation=conversation
         self.totalChars=conversation.usersRepo.totalChars()
@@ -11,9 +11,10 @@ class Plotter:
 
 
     def plotChars(self):
-        with PdfPages(self.outputLoc) as pdf:
-            info = pdf.infodict()
+        with PdfPages(self.outputLoc+self.conversation.title+".pdf") as pdf:
             title = "statistics of \"{}\" conversation"
+            info = pdf.infodict()
+            info["Title"] = title.format(self.conversation.title)
             self.chartCreate("percentage of messages sent",self.conversation.getMessages(),self.conversation.getNames(),self.totalMessages)
             pdf.savefig()
             plt.close()

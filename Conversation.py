@@ -27,6 +27,7 @@ class Conversation:
         #json file reading
         file=json.load(open(path,encoding='utf-8',))
         #users reading
+        self.title=file["title"]
         print("Users reading")
         for user in file["participants"]:
             self.usersRepo.addUser(user["name"])
