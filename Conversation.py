@@ -5,10 +5,6 @@ import os
 
 
 class Conversation:
-    titleCrop = ["<title>", "</title>"]
-    usersCrop = ["class=\"_2lek\">", "</div>"]
-    messageSeparators = ["<div class=\"_3-96 _2pio _2lek _2lel\">",
-                         "</div><div class=\"_3-96 _2let\"><div><div></div><div>", "</div>"]
 
     def __init__(self, path):  #init
         self.dir=os.listdir(path)
@@ -25,17 +21,17 @@ class Conversation:
 
     def readFile(self,path):
         #json file reading
-        file=json.load(open(path,encoding='utf-8',))
+        file=json.load(open(path,encoding='utf8'))
         #users reading
-        self.title=file["title"]
+        self.title=self.toUtf8(file["title"])
         print("Users reading")
         for user in file["participants"]:
-            self.usersRepo.addUser(user["name"])
+            self.usersRepo.addUser(self.toUtf8(user["name"]))
         #messages reading
         print("Messages reading")
         for message in file["messages"]:
             if "content" in message:
-                self.usersRepo.messageFound(message["sender_name"],message["content"])
+                self.usersRepo.messageFound(self.toUtf8(message["sender_name"]),self.toUtf8(message["content"]))
 
     def getNames(self):
         return self.usersRepo.getNames()
@@ -45,3 +41,6 @@ class Conversation:
 
     def getChars(self):
         return self.usersRepo.getChars()
+
+    def toUtf8(self,text):
+        return text.encode('latin_1').decode('utf-8')
