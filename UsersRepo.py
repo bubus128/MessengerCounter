@@ -9,7 +9,7 @@ class UsersRepo:
     #add user if not exists
     def addUser(self, name):
         user = User(name)
-        if self.findUserByName(name)==-1:
+        if self.findUserByName(name)==False:
             self.users.append(user)
 
     #count of users
@@ -21,12 +21,34 @@ class UsersRepo:
         for user in self.users:
             if user.name==name:
                 return user
-        return -1
+        return False
+
+    def addFile(self,name):
+        user=self.findUserByName(name)
+        if user!=False:
+            user.addFile()
+        else:
+            self.messageSender.userNotFound(name)
+
+    def addPhoto(self,name):
+        user = self.findUserByName(name)
+        if user!=False:
+            user.addPhoto()
+        else:
+            self.messageSender.userNotFound(name)
+
+    def addReaction(self,name,react):
+        user = self.findUserByName(name)
+        if user!=False:
+            user.addReaction(react)
+        else:
+            self.messageSender.userNotFound(name)
+        pass
 
     #add message to user
-    def messageFound(self,name,content):
+    def addMessage(self,name,content):
         user=self.findUserByName(name)
-        if user!=-1:
+        if user!=False:
             chars=len(content)
             user.addMessage(chars)
         else:

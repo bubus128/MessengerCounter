@@ -24,14 +24,16 @@ class Conversation:
         file=json.load(open(path,encoding='utf8'))
         #users reading
         self.title=self.toUtf8(file["title"])
-        print("Users reading")
         for user in file["participants"]:
             self.usersRepo.addUser(self.toUtf8(user["name"]))
         #messages reading
-        print("Messages reading")
         for message in file["messages"]:
+            name=self.toUtf8(message["sender_name"])
             if "content" in message:
-                self.usersRepo.messageFound(self.toUtf8(message["sender_name"]),self.toUtf8(message["content"]))
+                self.usersRepo.addMessage(name,self.toUtf8(message["content"]))
+            if "photos" in message:
+                for photo in message["photos"]:
+                    self.usersRepo.addPhoto(name)
 
     def getNames(self):
         return self.usersRepo.getNames()
