@@ -1,7 +1,8 @@
 class User:
     messages=0
     chars=0
-    reactions=[]
+    givenReactions=[]
+    ernedReactions=[]
     photos=0
     files=0
     def __init__(self,name):
@@ -14,7 +15,10 @@ class User:
     def addPhoto(self):
         self.photos+=1
 
-    def addReaction(self,react):
+    def addGivenReaction(self,react):
+        self.reactions[react]+=1
+
+    def addErnedReaction(self,react):
         self.reactions[react]+=1
 
     def addFile(self):

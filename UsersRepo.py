@@ -1,6 +1,6 @@
 from User import User
 class UsersRepo:
-    users = []  #array of users
+    users = {}  #dictionary of users
 
     def __init__(self,sender):
         self.messageSender=sender
@@ -8,92 +8,40 @@ class UsersRepo:
 
     #add user if not exists
     def addUser(self, name):
-        user = User(name)
-        if self.findUserByName(name)==False:
-            self.users.append(user)
-
-    #count of users
-    def getUsersCount(self):
-        return len(self.users)
-
-    #find user by name, if not found then return -1
-    def findUserByName(self,name):
-        for user in self.users:
-            if user.name==name:
-                return user
-        return False
+        if name not in self.users:
+            user = User(name)
+            self.users[name]=user
 
     def addFile(self,name):
-        user=self.findUserByName(name)
-        if user!=False:
-            user.addFile()
+        if name in self.users:
+            self.users[name].addFile()
         else:
             self.messageSender.userNotFound(name)
 
     def addPhoto(self,name):
-        user = self.findUserByName(name)
-        if user!=False:
-            user.addPhoto()
+        if name in self.users:
+            self.users[name].addPhoto()
         else:
             self.messageSender.userNotFound(name)
 
-    def addReaction(self,name,react):
-        user = self.findUserByName(name)
-        if user!=False:
-            user.addReaction(react)
+    def addReaction(self,receiver,feeder,react):
+        if receiver in self.users:
+            if feeder in self.users:
+                self.users[receiver].addErnedReaction(react)
+                self.users[feeder].addGivenReaction(react)
+            else:
+                self.messageSender.userNotFound(feeder)
         else:
-            self.messageSender.userNotFound(name)
+            self.messageSender.userNotFound(receiver)
         pass
 
     #add message to user
     def addMessage(self,name,content):
-        user=self.findUserByName(name)
-        if user!=False:
-            chars=len(content)
-            user.addMessage(chars)
+        if name in self.users:
+            self.users[name].addMessage(len(content))
         else:
             self.messageSender.userNotFound(name)
 
-    #retur total count of messages
-    def totalMessaes(self):
-        total=0
-        for user in self.users:
-            total+=user.messages
-        return total
-
-    #retur total count of chars in messages
-    def totalChars(self):
-        total=0
-        for user in self.users:
-            total+=user.chars
-        return total
-
     #return list of users names
-    def getNames(self):
-        return [user.name for user in self.users]
-
-    #return list of users messages count
-    def getMessages(self):
-        return [user.messages for user in self.users]
-
-    #return list of users chars count
-    def getChars(self):
-        return [user.chars for user in self.users]
-
-    #sorting key to sorting users by messages count
-    def sortingMessagesKey(self,user):
-        return user.messages
-
-    #sorting key to sorting users by chars count
-    def sortingCharsKey(self,user):
-        return user.chars
-
-    #sort users by messages count
-    def messageSort(self):
-        self.users.sort(key=self.sortingMessagesKey,reverse=True)
-        print("sorted by messages count")
-
-    #sort users by chars count
-    def charsSort(self):
-        self.users.sort(key=self.sortingCharsKey, reverse=True)
-        print("sorted by chars count")
+    def getData(self):
+        return self.users

@@ -16,8 +16,6 @@ class Conversation:
         for file in self.dir:
             if file.startswith("message"):
                 self.readFile(os.path.join(path,file))
-        #sorting
-        self.usersRepo.messageSort()
 
     def readFile(self,path):
         #json file reading
@@ -35,14 +33,8 @@ class Conversation:
                 for photo in message["photos"]:
                     self.usersRepo.addPhoto(name)
 
-    def getNames(self):
-        return self.usersRepo.getNames()
-
-    def getMessages(self):
-        return self.usersRepo.getMessages()
-
-    def getChars(self):
-        return self.usersRepo.getChars()
+    def getData(self):
+        return self.usersRepo.getData()
 
     def toUtf8(self,text):
         return text.encode('latin_1').decode('utf-8')
