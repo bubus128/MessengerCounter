@@ -19,11 +19,11 @@ class Plotter:
             names=self.getNames()
             messages=self.getMessages()
             chars=self.getChars()
-            self.chartCreate("percentage of messages sent",messages,names,len(messages))
+            self.chartCreate("percentage of messages sent",messages,names,sum(messages))
             pdf.savefig()
             plt.close()
             # sorting data by count of messages sent
-            self.chartCreate("percentage of chars in messages sent", chars, names, len(chars))
+            self.chartCreate("percentage of chars in messages sent", chars, names, sum(chars))
             pdf.savefig()
             plt.close()
 
