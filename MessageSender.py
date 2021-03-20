@@ -1,20 +1,25 @@
 from termcolor import colored
 
+
 class MessageSender:
 
     def __init__(self):
         print("messageSender created")
 
-    def usersCreated(self,count):
-        message="{} users created"
+    @staticmethod
+    def users_created(count):
+        message = "{} users created"
         print(message.format(count))
 
-    def repoInit(self):
+    @staticmethod
+    def repo_init():
         print("users repo is starting")
 
-    def userNotFound(self,name):
-        print(colored("user: "+name+" not found in conversation",'red'))
+    @staticmethod
+    def user_not_found(name):
+        print(colored("user: "+name+" not found in conversation", 'red'))
 
-    def messagesReaded(self,messages,chars):
-        message="{} messages readed (containing {} chars)"
-        print(message.format(messages,chars))
+    @staticmethod
+    def messages_read(messages, chars):
+        message = "{} messages read (containing {} chars)"
+        print(message.format(messages, chars))

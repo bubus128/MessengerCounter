@@ -1,47 +1,49 @@
 from User import User
+
+
 class UsersRepo:
-    users = {}  #dictionary of users
+    users = {}  # dictionary of users
 
-    def __init__(self,sender):
-        self.messageSender=sender
-        self.messageSender.repoInit()
+    def __init__(self, sender):
+        self.messageSender = sender
+        self.messageSender.repo_init()
 
-    #add user if not exists
-    def addUser(self, name):
+    # add user if not exists
+    def add_user(self, name):
         if name not in self.users:
             user = User(name)
-            self.users[name]=user
+            self.users[name] = user
 
-    def addFile(self,name):
+    def add_file(self, name):
         if name in self.users:
-            self.users[name].addFile()
+            self.users[name].add_file()
         else:
-            self.messageSender.userNotFound(name)
+            self.messageSender.user_not_found(name)
 
-    def addPhoto(self,name):
+    def add_photo(self, name):
         if name in self.users:
-            self.users[name].addPhoto()
+            self.users[name].add_photo()
         else:
-            self.messageSender.userNotFound(name)
+            self.messageSender.user_not_found(name)
 
-    def addReaction(self,receiver,feeder,react):
+    def add_reaction(self, receiver, feeder, react):
         if receiver in self.users:
             if feeder in self.users:
-                self.users[receiver].addErnedReaction(react)
-                self.users[feeder].addGivenReaction(react)
+                self.users[receiver].add_earned_reaction(react)
+                self.users[feeder].add_given_reaction(react)
             else:
-                self.messageSender.userNotFound(feeder)
+                self.messageSender.user_not_found(feeder)
         else:
-            self.messageSender.userNotFound(receiver)
+            self.messageSender.user_not_found(receiver)
         pass
 
-    #add message to user
-    def addMessage(self,name,content):
+    # add message to user
+    def add_message(self, name, content):
         if name in self.users:
-            self.users[name].addMessage(len(content))
+            self.users[name].add_message(len(content))
         else:
-            self.messageSender.userNotFound(name)
+            self.messageSender.user_not_found(name)
 
-    #return list of users names
-    def getData(self):
+    # return list of users names
+    def get_data(self):
         return self.users

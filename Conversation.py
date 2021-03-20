@@ -6,38 +6,40 @@ import os
 
 class Conversation:
 
-    def __init__(self, path):  #init
-        self.dir=os.listdir(path)
-        #creating messageSender
+    def __init__(self, path):  # init
+        self.dir = os.listdir(path)
+        # creating messageSender
         self.messageSender = MessageSender()
-        #users repo initialization
+        # users repo initialization
         self.usersRepo = UsersRepo(self.messageSender)
-        #read files
+        self.title = ""
+        # read files
         for file in self.dir:
             if file.startswith("message"):
-                self.readFile(os.path.join(path,file))
+                self.read_file(os.path.join(path, file))
 
-    def readFile(self,path):
-        #json file reading
-        file=json.load(open(path,encoding='utf8'))
-        #users reading
-        self.title=self.toUtf8(file["title"])
+    def read_file(self, path):
+        # json file reading
+        file = json.load(open(path, encoding='utf8'))
+        # users reading
+        self.title = self.to_utf8(file["title"])
         for user in file["participants"]:
-            self.usersRepo.addUser(self.toUtf8(user["name"]))
-        #messages reading
+            self.usersRepo.add_user(self.to_utf8(user["name"]))
+        # messages reading
         for message in file["messages"]:
-            name=self.toUtf8(message["sender_name"])
+            name = self.to_utf8(message["sender_name"])
             if "content" in message:
-                self.usersRepo.addMessage(name,self.toUtf8(message["content"]))
+                self.usersRepo.add_message(name, self.to_utf8(message["content"]))
             if "photos" in message:
-                for photo in message["photos"]:
-                    self.usersRepo.addPhoto(name)
+                for _ in message["photos"]:
+                    self.usersRepo.add_photo(name)
             if "reactions" in message:
                 for reaction in message["reactions"]:
-                    self.usersRepo.addReaction(name,self.toUtf8(reaction["actor"]),reaction["reaction"])
+                    self.usersRepo.add_reaction(name, self.to_utf8(reaction["actor"]), reaction["reaction"])
 
-    def getData(self):
-        return self.usersRepo.getData()
+    def get_data(self):
+        return self.usersRepo.get_data()
 
-    def toUtf8(self,text):
+    @staticmethod
+    def to_utf8(text):
         return text.encode('latin_1').decode('utf-8')
