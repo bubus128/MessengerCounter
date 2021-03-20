@@ -15,15 +15,15 @@ class Plotter:
             info = pdf.infodict()
             info["Title"] = title.format(self.conversation.title)
             #sorting data by count of messages sent
-            #self.data=dict(sorted(self.data.items()),key=lambda item:item.getMessagesCount())
-            names=self.getNames()
+            self.data=dict(sorted(list(self.data.items()),key=lambda item:item[1].messages,reverse=True))
             messages=self.getMessages()
-            chars=self.getChars()
-            self.chartCreate("percentage of messages sent",messages,names,sum(messages))
+            self.chartCreate("percentage of messages sent",messages,self.getNames(),sum(messages))
             pdf.savefig()
             plt.close()
             # sorting data by count of messages sent
-            self.chartCreate("percentage of chars in messages sent", chars, names, sum(chars))
+            self.data = dict(sorted(list(self.data.items()), key=lambda item: item[1].chars, reverse=True))
+            chars = self.getChars()
+            self.chartCreate("percentage of chars in messages sent", chars, self.getNames(), sum(chars))
             pdf.savefig()
             plt.close()
 
