@@ -1,8 +1,8 @@
 class User:
     messages=0
     chars=0
-    givenReactions=[]
-    ernedReactions=[]
+    givenReactions={}
+    ernedReactions={}
     photos=0
     files=0
     def __init__(self,name):
@@ -16,16 +16,16 @@ class User:
         self.photos+=1
 
     def addGivenReaction(self,react):
-        self.reactions[react]+=1
+        if react in self.givenReactions.keys():
+            self.givenReactions[react]+=1
+        else:
+            self.givenReactions[react] =1
 
     def addErnedReaction(self,react):
-        self.reactions[react]+=1
+        if react in self.ernedReactions.keys():
+            self.ernedReactions[react] += 1
+        else:
+            self.ernedReactions[react] = 1
 
     def addFile(self):
         self.files+=1
-
-    def getMessagesCount(self):
-        return self.messages
-
-    def getCharsCount(self):
-        return self.chars

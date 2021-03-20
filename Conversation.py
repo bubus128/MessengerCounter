@@ -32,6 +32,9 @@ class Conversation:
             if "photos" in message:
                 for photo in message["photos"]:
                     self.usersRepo.addPhoto(name)
+            if "reactions" in message:
+                for reaction in message["reactions"]:
+                    self.usersRepo.addReaction(name,self.toUtf8(reaction["actor"]),reaction["reaction"])
 
     def getData(self):
         return self.usersRepo.getData()
