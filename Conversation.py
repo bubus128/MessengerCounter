@@ -35,11 +35,13 @@ class Conversation:
                     self.usersRepo.add_photo(name)
             if "reactions" in message:
                 for reaction in message["reactions"]:
-                    self.usersRepo.add_reaction(name, self.to_utf8(reaction["actor"]), self.to_utf8(reaction["reaction"]))
+                    self.usersRepo.add_reaction(name, self.to_utf8(reaction["actor"]),
+                                                self.to_utf8(reaction["reaction"]))
 
     def get_data(self):
         return self.usersRepo.get_data()
 
+    # convert any text to utf8 chars
     @staticmethod
     def to_utf8(text):
         return text.encode('latin_1').decode('utf-8')

@@ -1,15 +1,15 @@
 class User:
-    messages = 0
-    chars = 0
-    givenReactions = {}
-    earnedReactions = {}
-    givenReactionsCount = 0
-    earnedReactionsCount = 0
-    photos = 0
-    files = 0
 
     def __init__(self, name):
         self.name = name
+        self.messages = 0
+        self.chars = 0
+        self.givenReactions = dict()
+        self.earnedReactions = dict()
+        self.givenReactionsCount = 0
+        self.earnedReactionsCount = 0
+        self.photos = 0
+        self.files = 0
 
     def add_message(self, chars):
         self.messages += 1

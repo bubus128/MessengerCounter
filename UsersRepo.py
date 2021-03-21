@@ -35,7 +35,6 @@ class UsersRepo:
                 self.messageSender.user_not_found(feeder)
         else:
             self.messageSender.user_not_found(receiver)
-        pass
 
     # add message to user
     def add_message(self, name, content):
