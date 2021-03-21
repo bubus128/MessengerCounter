@@ -8,9 +8,9 @@ class Plotter:
     def __init__(self, conversation):
         self.conversation = conversation
         self.data = conversation.get_data()
-        self.plot_chars()
+        self.plot_general_chars()
 
-    def plot_chars(self):
+    def plot_general_chars(self):
         with PdfPages(self.outputLoc+self.conversation.title+".pdf") as pdf:
             title = "statistics of \"{}\" conversation"
             info = pdf.infodict()
@@ -26,7 +26,16 @@ class Plotter:
             chars = self.get_chars()
             self.chart_create("percentage of chars in messages sent", chars, self.get_names(), sum(chars))
             pdf.savefig()
+            for user in list(self.data.values()):
+                self.plot_personal_chart(user)
+                pdf.savefig()
             plt.close()
+
+    @staticmethod
+    def plot_personal_chart(user):
+        fig, subs = plt.subplots(2, 2, figsize=[11.69, 8.27])
+        fig.suptitle(user.name)
+        subs[0][0].bar(list(user.earnedReactions.keys()), list(user.earnedReactions.values()))
 
     @staticmethod
     def chart_create(title, values, labels, max_value):
