@@ -34,14 +34,13 @@ class Plotter:
     @staticmethod
     def plot_personal_chart(user):
         # subplots creating
-        fig, subs = plt.subplots(2, 2, figsize=[11.69, 8.27])
+        fig, subs = plt.subplots(2, figsize=[11.69, 8.27])
         # title of fig is a name of user
         fig.suptitle(user.name)
         # subplot1: earned reactions
-        subs[0][0].bar(list(user.earnedReactions.keys()), list(user.earnedReactions.values()))
+        subs[0].bar(list(user.earnedReactions.keys()), list(user.earnedReactions.values()))
         # subplot2: given reactions
-        subs[0][1].bar(list(user.givenReactions.keys()), list(user.givenReactions.values()))
-
+        subs[1].bar(list(user.givenReactions.keys()), list(user.givenReactions.values()))
 
     @staticmethod
     def chart_create(title, values, labels, max_value):
